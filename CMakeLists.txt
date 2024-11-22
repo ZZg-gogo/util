@@ -22,5 +22,12 @@ set(src
 
 
 add_executable(MyUtil ${src} ${base_src})
-target_link_libraries(MyUtil ${Boost_LIBRARIES})
+target_link_libraries(MyUtil )
 
+
+add_executable(TestTimer ../test/testTimer.cpp ${base_src})
+target_link_libraries(TestTimer )
+
+
+add_executable(TestUniquePtr ../test/testUniquePtr.cpp ${base_src})
+target_link_libraries(TestUniquePtr )
