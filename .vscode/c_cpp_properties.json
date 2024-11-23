@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**", 
+                "/opt/rh/devtoolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11", 
+                "/opt/rh/devtoolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward", 
+                "/opt/rh/devtoolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11/include", 
+                "/usr/local/include" ,
+                "/opt/rh/devtoolset-11/root/usr/include",
+                "/usr/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc", 
+            "cStandard": "c11", 
+            "cppStandard": "c++20", 
+            "intelliSenseMode": "linux-gcc-x64" 
+        }
+    ],
+    "version": 4
+}
+
+
