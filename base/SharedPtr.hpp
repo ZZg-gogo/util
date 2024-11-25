@@ -4,8 +4,15 @@
 #include <atomic>
 #include <functional>
 
+#include "EnableSharedFromThis.hpp"
+
 namespace ZZG
 {
+
+
+template <typename T>
+struct IsEnableSharedFromThis : std::is_base_of<EnableSharedFromThis<T>, T> {};
+
 
 template <typename T>
 class WeakPtr;
@@ -41,22 +48,28 @@ public:
 
     SharedPtr(T * data) :
         info_(new SharedInfo(data))
-    {}
+    {
+        setupEnableSharedFromThis();
+    }
 
     SharedPtr(T * data, Deleter del) :
         info_(new SharedInfo(data, del))
-    {}
+    {
+        setupEnableSharedFromThis();
+    }
 
     SharedPtr(const SharedPtr& other) :
         info_(other.info_)
     {
         ++info_->strongCount;
+        setupEnableSharedFromThis();
     }
 
     SharedPtr(SharedPtr&& other) :
         info_(other.info_)
     {
         other.info_ = nullptr;
+        setupEnableSharedFromThis();
     }
 
     SharedPtr& operator=(const SharedPtr& other)
@@ -66,6 +79,8 @@ public:
             reset();
             info_ = other.info_;
             ++info_->strongCount; // 增加新对象的强引用计数
+
+            setupEnableSharedFromThis();
         }
         
 
@@ -80,6 +95,8 @@ public:
             info_ = other.info_;
 
             other.info_ = nullptr;
+
+            setupEnableSharedFromThis();
         }
         return *this;
     }
@@ -155,6 +172,17 @@ private:
     SharedPtr(SharedInfo *info) :
         info_(info)
     {}
+
+    // 检查是否继承自 EnableSharedFromThis 并设置弱引用
+    void setupEnableSharedFromThis() 
+    {
+        if constexpr (std::is_base_of<EnableSharedFromThis<T>, T>::value) 
+        {
+            if (info_ && info_->data) {
+                static_cast<EnableSharedFromThis<T>*>(info_->data)->setOwner(*this);
+            }
+        }
+    }
 
 private:
     friend class WeakPtr<T>;
