@@ -31,3 +31,11 @@ target_link_libraries(TestTimer )
 
 add_executable(TestUniquePtr ../test/testUniquePtr.cpp ${base_src})
 target_link_libraries(TestUniquePtr )
+
+
+add_executable(TestSharedPtr ../test/testSharedPtr.cpp ${base_src})
+target_link_libraries(TestSharedPtr )
+
+
+add_executable(TestWeakPtr ../test/testWeakPtr.cpp ${base_src})
+target_link_libraries(TestWeakPtr )
