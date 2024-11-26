@@ -12,11 +12,13 @@ int main()
 
     l += 1,2,3,4,5;
 
+    push_back(l)(7)(8)(9);
+
     std::cout<<"size = "<<l.size()<<std::endl;
 
 
 
-    std::list<int> v;
+    std::vector<int> v;
     v += 10,9,8,7,6,5;
 
     for (auto &i: v)

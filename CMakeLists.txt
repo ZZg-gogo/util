@@ -49,8 +49,10 @@ target_link_libraries(TestEnableSharedFromThis )
 add_executable(TestOptianal ../test/testOptianal.cpp ${base_src})
 target_link_libraries(TestOptianal )
 
+add_executable(TestAssign ../test/testAssign.cpp ${base_src})
+target_link_libraries(TestAssign )
+
 endif()
 
 
-add_executable(TestAssign ../test/testAssign.cpp ${base_src})
-target_link_libraries(TestAssign )
+
