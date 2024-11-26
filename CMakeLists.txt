@@ -43,3 +43,7 @@ target_link_libraries(TestWeakPtr )
 
 add_executable(TestEnableSharedFromThis ../test/testEnableSharedFromThis.cpp ${base_src})
 target_link_libraries(TestEnableSharedFromThis )
+
+
+add_executable(TestOptianal ../test/testOptianal.cpp ${base_src})
+target_link_libraries(TestOptianal )
