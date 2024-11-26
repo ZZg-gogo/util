@@ -69,7 +69,8 @@
       "ratio": "cpp",
       "string_view": "cpp",
       "numbers": "cpp",
-      "cinttypes": "cpp"
+      "cinttypes": "cpp",
+      "list": "cpp"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "aiXcoder.showTrayIcon": true
