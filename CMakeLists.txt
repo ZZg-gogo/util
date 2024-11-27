@@ -54,5 +54,8 @@ target_link_libraries(TestAssign )
 
 endif()
 
+add_executable(TestLexicalCast ../test/testLexicalCast.cpp ${base_src})
+target_link_libraries(TestLexicalCast )
+
 
 
