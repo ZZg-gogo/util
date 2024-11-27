@@ -52,10 +52,15 @@ target_link_libraries(TestOptianal )
 add_executable(TestAssign ../test/testAssign.cpp ${base_src})
 target_link_libraries(TestAssign )
 
-endif()
-
 add_executable(TestLexicalCast ../test/testLexicalCast.cpp ${base_src})
 target_link_libraries(TestLexicalCast )
+
+endif()
+
+add_executable(TestFormat ../test/testFormat.cpp ${base_src})
+target_link_libraries(TestFormat )
+
+
 
 
 
