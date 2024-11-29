@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 project (ZZG_UTIL)
 
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -ggdb -Wall -O0 -Wno-unused-variable -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -ggdb -Wall -O0 -Wno-unused-variable -pthread")
 
 link_directories(
     ${PROJECT_SOURCE_DIR}/lib
@@ -55,12 +55,24 @@ target_link_libraries(TestAssign )
 add_executable(TestLexicalCast ../test/testLexicalCast.cpp ${base_src})
 target_link_libraries(TestLexicalCast )
 
-endif()
-
 add_executable(TestFormat ../test/testFormat.cpp ${base_src})
 target_link_libraries(TestFormat )
 
+endif()
 
+
+
+
+
+
+######模板的
+if(FALSE)
+    add_executable(testCommonType ../testTemplate/testCommonType.cpp ${base_src})
+    target_link_libraries(testCommonType )
+endif()
+
+add_executable(testUsingTypename ../testTemplate/testUsingTypename.cpp ${base_src})
+target_link_libraries(testUsingTypename )
 
 
 
