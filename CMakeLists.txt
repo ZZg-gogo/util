@@ -72,10 +72,13 @@ if(FALSE)
 
     add_executable(testUsingTypename ../testTemplate/testUsingTypename.cpp ${base_src})
     target_link_libraries(testUsingTypename )
+
+    add_executable(testVarTemplate ../testTemplate/testVarTemplate.cpp ${base_src})
+    target_link_libraries(testVarTemplate )
 endif()
 
-add_executable(testVarTemplate ../testTemplate/testVarTemplate.cpp ${base_src})
-target_link_libraries(testVarTemplate )
+add_executable(testRawArray ../testTemplate/testRawArray.cpp ${base_src})
+target_link_libraries(testRawArray )
 
 
 
