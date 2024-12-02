@@ -75,10 +75,14 @@ if(FALSE)
 
     add_executable(testVarTemplate ../testTemplate/testVarTemplate.cpp ${base_src})
     target_link_libraries(testVarTemplate )
+
+    add_executable(testRawArray ../testTemplate/testRawArray.cpp ${base_src})
+    target_link_libraries(testRawArray )
 endif()
 
-add_executable(testRawArray ../testTemplate/testRawArray.cpp ${base_src})
-target_link_libraries(testRawArray )
+add_executable(testMoveEnableIf ../testTemplate/testMoveEnableIf.cpp ${base_src})
+target_link_libraries(testMoveEnableIf )
+
 
 
 
