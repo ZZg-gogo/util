@@ -69,10 +69,14 @@ endif()
 if(FALSE)
     add_executable(testCommonType ../testTemplate/testCommonType.cpp ${base_src})
     target_link_libraries(testCommonType )
+
+    add_executable(testUsingTypename ../testTemplate/testUsingTypename.cpp ${base_src})
+    target_link_libraries(testUsingTypename )
 endif()
 
-add_executable(testUsingTypename ../testTemplate/testUsingTypename.cpp ${base_src})
-target_link_libraries(testUsingTypename )
+add_executable(testVarTemplate ../testTemplate/testVarTemplate.cpp ${base_src})
+target_link_libraries(testVarTemplate )
+
 
 
 
