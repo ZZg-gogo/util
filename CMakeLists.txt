@@ -78,10 +78,13 @@ if(FALSE)
 
     add_executable(testRawArray ../testTemplate/testRawArray.cpp ${base_src})
     target_link_libraries(testRawArray )
+
+    add_executable(testMoveEnableIf ../testTemplate/testMoveEnableIf.cpp ${base_src})
+    target_link_libraries(testMoveEnableIf )
 endif()
 
-add_executable(testMoveEnableIf ../testTemplate/testMoveEnableIf.cpp ${base_src})
-target_link_libraries(testMoveEnableIf )
+add_executable(testCompileTime ../testTemplate/testCompileTime.cpp ${base_src})
+target_link_libraries(testCompileTime )
 
 
 
