@@ -81,10 +81,17 @@ if(FALSE)
 
     add_executable(testMoveEnableIf ../testTemplate/testMoveEnableIf.cpp ${base_src})
     target_link_libraries(testMoveEnableIf )
+
+    add_executable(testCompileTime ../testTemplate/testCompileTime.cpp ${base_src})
+    target_link_libraries(testCompileTime )
+
+
+    add_executable(testTemplateLib ../testTemplate/testTemplateLib.cpp ${base_src})
+    target_link_libraries(testTemplateLib )
 endif()
 
-add_executable(testCompileTime ../testTemplate/testCompileTime.cpp ${base_src})
-target_link_libraries(testCompileTime )
+add_executable(testTraits ../testTemplate/testTraits.cpp ${base_src})
+target_link_libraries(testTraits )
 
 
 
